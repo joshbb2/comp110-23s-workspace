@@ -6,7 +6,7 @@ if(light == "green"):
     print("Go!")
     print("Drive safe! Love, mom.")
 else:
-    if (light != "red"):
+    if(light != "red"):
         if (light == "yellow"): 
             print("Slow down!")
         else:
