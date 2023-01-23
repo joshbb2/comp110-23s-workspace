@@ -18,7 +18,7 @@ else:
 
 if(word[0] == character):
     print(character + " found at index 0")
-    print("1 instance of" + character + " found in " + word)
+    print("1 instance of " + character + " found in " + word)
 if(word[1] == character):
     print(character + " found at index 1")
 if(word[2] == character):
@@ -28,3 +28,4 @@ if(word[3] == character):
 if(word[4] == character):
     print(character + " found at index 4")
 
+print(len(word))
