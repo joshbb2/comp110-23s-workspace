@@ -16,7 +16,15 @@ else:
 if(character not in word):
         print("No instances of " + character + " in " + word)
 
-x = 1
+a: str = word[0]
+
+b: str = word[1] 
+
+c: str = word[2]
+
+d: str = word[3]
+
+e: str = word[4]
 
 if(word[0] == character):
     print(character + " found at index 0")
