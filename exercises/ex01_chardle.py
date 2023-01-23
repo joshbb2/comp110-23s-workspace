@@ -13,20 +13,18 @@ if((len(character)) != 1):
     print("Error: Character must be a single character.")
 else:
     print("Searching for " + character + " in " + word)
+    if(character not in word):
+        print("No instances of " + character + " in " + word)
 
-if(character not in word):
-    print("No instances of " + character + " in " + word)
-
-x = 1
-
-if(character == word[0]):
+if(word[0] == character):
     print(character + " found at index 0")
-if(character == word[1]):
+    print("1 instance of" + character + " found in " + word)
+if(word[1] == character):
     print(character + " found at index 1")
-if(character == word[2]):
+if(word[2] == character):
     print(character + " found at index 2")
-if(character == word[3]):
+if(word[3] == character):
     print(character + " found at index 3")
-if(character == word[4]):
+if(word[4] == character):
     print(character + " found at index 4")
 
