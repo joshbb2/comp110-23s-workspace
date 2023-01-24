@@ -11,7 +11,7 @@ else:
     exit()
 
 if((len(character)) == 1):
-    print("Searching for " + character + " in " + word)
+    print("Searching for " + character + " in " + word )
 else: 
     print("Error: Character must be a single character.")
     exit()
@@ -36,12 +36,12 @@ if(word[4] == character):
 
 if(len(character) == 1):
     if(counter == 0):
-        print("No instances of " + character + " found in " + word)
+        print("No instances of " + character + " found in " + word )
     if(counter == 1):
-        print(str(counter) + " instance of " + character + " in " + word)
+        print(str(counter) + " instance of " + character + " found in " + word )
     if(counter == 2):
-        print(str(counter) + " instances of " + character + " in " + word)
+        print(str(counter) + " instances of " + character + " found in " + word )
     if(counter == 3):
-        print(str(counter) + " instances of " + character + " in " + word)
+        print(str(counter) + " instances of " + character + " found in " + word )
     if(counter == 4):
-        print(str(counter) + " instances of " + character + " in " + word)
+        print(str(counter) + " instances of " + character + " found in " + word )
