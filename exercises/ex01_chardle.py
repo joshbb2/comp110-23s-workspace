@@ -16,25 +16,22 @@ else:
 if(character not in word):
         print("No instances of " + character + " in " + word)
 
-a: str = word[0]
 
-b: str = word[1] 
-
-c: str = word[2]
-
-d: str = word[3]
-
-e: str = word[4]
+counter = 0
 
 if(word[0] == character):
     print(character + " found at index 0")
-    print(x + " instance of " + character + " found in " + word)
+    counter = counter + 1
 if(word[1] == character):
     print(character + " found at index 1")
-    print(x + 1, " instances of " + character + " in " + word)
+    counter = counter + 1
 if(word[2] == character):
     print(character + " found at index 2")
+    counter = counter + 1
 if(word[3] == character):
     print(character + " found at index 3")
+    counter = counter + 1
 if(word[4] == character):
     print(character + " found at index 4")
+    counter = counter + 1
+print(str(counter) + " instances of " + character + " in " + word)
