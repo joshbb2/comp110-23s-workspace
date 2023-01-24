@@ -4,18 +4,15 @@ __author__ = "730406136"
 
 word: str = input("Enter a 5-character word: ")
 
-if((len(word)) != 5):
-    print("Error: Word must contain 5 characters.")
-else:
+if((len(word)) == 5):
     character: str = input("Enter a single character: ")
-
-if((len(character)) != 1):
-    print("Error: Character must be a single character.")
 else:
-    print("Searching for " + character + " in " + word)
-if(character not in word):
-        print("No instances of " + character + " in " + word)
+    print("Error: Word must contain 5 characters.")
 
+if((len(character)) == 1):
+    print("Searching for " + character + " in " + word)
+else: 
+    print("Error: Character must be a single character.")
 
 counter = 0
 
@@ -34,4 +31,15 @@ if(word[3] == character):
 if(word[4] == character):
     print(character + " found at index 4")
     counter = counter + 1
-print(str(counter) + " instances of " + character + " in " + word)
+
+if(len(character) == 1):
+    if(counter == 0):
+        print("No instances of " + character + " found in " + word)
+    if(counter == 1):
+        print(str(counter) + " instance of " + character + " in " + word)
+    if(counter == 2):
+        print(str(counter) + " instances of " + character + " in " + word)
+    if(counter == 3):
+        print(str(counter) + " instances of " + character + " in " + word)
+    if(counter == 4):
+        print(str(counter) + " instances of " + character + " in " + word)
