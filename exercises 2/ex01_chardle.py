@@ -8,13 +8,11 @@ if((len(word)) == 5):
     character: str = input("Enter a single character: ")
 else:
     print("Error: Word must contain 5 characters.")
-    exit()
 
 if((len(character)) == 1):
     print("Searching for " + character + " in " + word)
 else: 
     print("Error: Character must be a single character.")
-    exit()
 
 counter = 0
 
