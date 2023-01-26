@@ -1,5 +1,7 @@
 """EX01 - Chardle - A cute step toward Wordle."""
 
+print("UNC" > "Duke")
+
 __author__ = "730406136"
 
 word: str = input("Enter a 5-character word: ")
