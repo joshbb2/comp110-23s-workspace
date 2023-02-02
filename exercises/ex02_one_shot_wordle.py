@@ -6,8 +6,8 @@ SECRET: str = "python"
 
 guess: str = input("What is your 6-letters guess? ")
 
-if len(guess) != 6:
-    print(input("That was not 6 letters! Try again: "))
+while len(guess) != 6:
+    (input("That was not 6 letters! Try again: "))
 
 if guess == SECRET:
     print("Woo! You got it!")
