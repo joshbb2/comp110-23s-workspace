@@ -52,5 +52,11 @@ if SECRET[4] == guess[4]:
 else:
     result = result + WHITE_BOX
     counter = counter + 1
+if SECRET[5] == guess[5]:
+    result = result + GREEN_BOX
+    counter = counter + 1
+else:
+    result = result + WHITE_BOX
+    counter = counter + 1
 
 print(result)
