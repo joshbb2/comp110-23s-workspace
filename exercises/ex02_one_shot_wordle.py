@@ -2,7 +2,7 @@
 
 __author__ = "730406136"
 
-secret: str = "python"
+SECRET: str = "python"
 
 guess: str = input("What is your 6-letters guess? ")
 
