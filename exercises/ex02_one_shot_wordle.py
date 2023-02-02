@@ -24,17 +24,33 @@ result: str = ""
 
 if SECRET[0] == guess[0]:
     result = GREEN_BOX
-    print(result)
     counter = counter + 1
 else:
     result = WHITE_BOX
-    print(result)
     counter = counter + 1
 if SECRET[1] == guess[1]:
     result = result + GREEN_BOX
-    print(result)
     counter = counter + 1
 else:
     result = result + WHITE_BOX
-    print(result)
     counter = counter + 1
+if SECRET[2] == guess [2]:
+    result = result + GREEN_BOX
+    counter = counter + 1
+else:
+    result = result + WHITE_BOX
+    counter = counter + 1
+if SECRET[3] == guess[3]:
+    result = result + GREEN_BOX
+    counter = counter + 1
+else:
+    result = result + WHITE_BOX
+    counter = counter + 1
+if SECRET[4] == guess[4]:
+    result = result + GREEN_BOX
+    counter = counter + 1
+else:
+    result = result + WHITE_BOX
+    counter = counter + 1
+
+print(result)
