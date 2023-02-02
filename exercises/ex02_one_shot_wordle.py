@@ -8,11 +8,33 @@ guess: str = input("What is your 6-letters guess? ")
 
 while len(guess) != 6:
     input("That was not 6 letters! Try again: ")
-    guess = input("That was not 6 letters! Try again: ")
-else:
-    if guess == SECRET:
+
+if guess == SECRET:
         print("Woo! You got it!")
-    else:
+else:
         print("Not quite. Play again soon!")
 
+WHITE_BOX: str = "\U00002B1C"
+GREEN_BOX: str = "\U0001F7E9"
+YELLOW_BOX: str = "\U0001F7E8"
 
+counter: int = 0
+
+result: str = ""
+
+if SECRET[0] == guess[0]:
+    result = GREEN_BOX
+    print(result)
+    counter = counter + 1
+else:
+    result = WHITE_BOX
+    print(result)
+    counter = counter + 1
+if SECRET[1] == guess[1]:
+    result = result + GREEN_BOX
+    print(result)
+    counter = counter + 1
+else:
+    result = result + WHITE_BOX
+    print(result)
+    counter = counter + 1
