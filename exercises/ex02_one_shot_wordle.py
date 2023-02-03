@@ -20,7 +20,7 @@ result: str = ""
 in_word: bool = False
 index: int = 0
 
-if guess[0] == SECRET[index]:
+if guess[0] == SECRET[0]:
     result = GREEN_BOX
     counter = counter + 1
 else:
