@@ -27,7 +27,7 @@ while index < len(guess):
         counter = counter + 1
     else:
         result = WHITE_BOX
-        counter = counter + 1   
+        counter = counter + 1  
     if SECRET[1] == guess[1]:
         result = result + GREEN_BOX
         counter = counter + 1
