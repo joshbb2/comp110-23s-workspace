@@ -18,44 +18,43 @@ counter: int = 0
 result: str = ""
 
 in_word: bool = False
-index: int = 0
 
-while index < len(guess):
-
-    if guess[0] == SECRET[0]:
+i = 0
+         
+if guess[0] == SECRET[0]:
         result = GREEN_BOX
         counter = counter + 1
-    else:
+else:
         result = WHITE_BOX
         counter = counter + 1  
-    if SECRET[1] == guess[1]:
+if SECRET[1] == guess[1]:
         result = result + GREEN_BOX
         counter = counter + 1
-    else:
+else:
         result = result + WHITE_BOX
         counter = counter + 1
-    if SECRET[2] == guess [2]:
+if SECRET[2] == guess [2]:
         result = result + GREEN_BOX
         counter = counter + 1
-    else:
+else:
         result = result + WHITE_BOX
         counter = counter + 1
-    if SECRET[3] == guess[3]:
+if SECRET[3] == guess[3]:
         result = result + GREEN_BOX
         counter = counter + 1
-    else:
+else:
         result = result + WHITE_BOX
         counter = counter + 1
-    if SECRET[4] == guess[4]:
+if SECRET[4] == guess[4]:
         result = result + GREEN_BOX
         counter = counter + 1
-    else:
+else:
         result = result + WHITE_BOX
         counter = counter + 1
-    if SECRET[5] == guess[5]:
+if SECRET[5] == guess[5]:
         result = result + GREEN_BOX
         counter = counter + 1
-    else:
+else:
         result = result + WHITE_BOX
         counter = counter + 1
 
