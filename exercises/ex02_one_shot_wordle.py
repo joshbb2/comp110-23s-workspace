@@ -27,6 +27,9 @@ if guess[0] == SECRET[0]:
 else:
         result = WHITE_BOX
         counter = counter + 1  
+while i < len(guess):
+        if guess[i] == "p":
+                in_word = True
 if SECRET[1] == guess[1]:
         result = result + GREEN_BOX
         counter = counter + 1
