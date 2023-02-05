@@ -21,11 +21,11 @@ in_word: bool = False
 
 i = 0
          
-while counter < len(SECRET):
+while count < len(SECRET):
         if guess[count] == SECRET[count]:
                 result = result + GREEN_BOX
-                counter = counter + 1
+                count = count + 1
         else:
                 result = result + WHITE_BOX
-                counter = counter + 1  
+                count = count + 1  
 print(result)
