@@ -6,7 +6,7 @@ SECRET: str = "python"
 
 guess: str = input("What is your 6-letter guess? ")
 
-while len(guess) != (6):
+while len(guess) != 6:
         input("That was not 6 letters! Try again: ")
 
 WHITE_BOX: str = "\U00002B1C"
@@ -15,25 +15,25 @@ YELLOW_BOX: str = "\U0001F7E8"
 
 result: str = ""
 
-in_word: bool = False
 
-i = 1
+i = 0       
+while i < len(SECRET):
+        in_word: bool = False
+        j = 0
+        while (in_word == False) and (j < len(SECRET)):
+                if guess[i] == SECRET[j] and (i == j):
+                        result = result + GREEN_BOX
+                elif guess[i] == SECRET[j]:
+                        in_word = True
 
-counter = 0
-       
-while counter < len(SECRET):
-        if guess[counter] == SECRET[counter]:
-                result = result + GREEN_BOX
-                counter = counter + 1
+                j = j + 1
+        if in_word:
+                result = result + YELLOW_BOX
         else:
-                while (in_word == False) and (i < len(SECRET)):
-                        if guess[0] == SECRET[i]:
-                                in_word = True
-                                result = result + YELLOW_BOX
-                                i = i + 1
-                        else: 
-                                i = i + 1
+                result = result + WHITE_BOX
+        i = i + 1
 
+print(result)
 if guess == SECRET:
         print("Woo! You got it! ")
 else: 
