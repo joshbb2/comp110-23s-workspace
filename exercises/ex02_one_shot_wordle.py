@@ -16,29 +16,29 @@ YELLOW_BOX: str = "\U0001F7E8"
 count: int = 0
 
 result: str = ""
+       
+while count < len(SECRET):
+        if guess[count] == SECRET[count]:
+                result = result + GREEN_BOX
+                count = count + 1
+        else:
+                result = result + WHITE_BOX
+                count = count + 1
 
 in_word: bool = False
 
-i = 0
+i: int = 0
 
-         
-while count < len(SECRET):
-        if guess[count] == SECRET[count]:
-                result = GREEN_BOX
-                count = count + 1
-while (in_word == False) and i < len(SECRET):
-        if guess[0] == SECRET[i]:
-                in_word = True
-                result = YELLOW_BOX
-                i = i + 1   
-        else:
-                result = WHITE_BOX
-                i = i + 1
-        if guess[1] == SECRET[i]:
-                in_word = True
-                result = YELLOW_BOX
-                i = i + 1   
-        else:
-                result = result + WHITE_BOX
-                i = i + 1           
-print(result)
+while in_word == False and i < len(SECRET):
+       if guess[1] == SECRET[i]:
+              in_word = True
+              result[1] == YELLOW_BOX
+              i = i + 1
+       else:
+              i = i + 1
+              
+              
+
+       
+       
+       print(result)
