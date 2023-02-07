@@ -32,7 +32,6 @@ while i < len(SECRET):
 print(result)
 
 
-
 if guess == SECRET:
         print("Woo! You got it! ")
 else: 
