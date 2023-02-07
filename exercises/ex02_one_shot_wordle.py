@@ -4,10 +4,10 @@ __author__ = "730406136"
 
 SECRET: str = "python"
 
-guess: str = input("What is your 6-letter guess? ")
+guess: str = input(f"What is your {len(SECRET)}-letter guess? ")
 
 while len(guess) != len(SECRET):
-        guess = input("That was not 6 letters! Try again: ")
+        guess = input(f"That was not {len(SECRET)} letters! Try again: ")
 
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
