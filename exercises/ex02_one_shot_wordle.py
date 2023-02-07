@@ -29,14 +29,11 @@ while i < len(SECRET):
                 j = j + 1
         i = i + 1
 
-if in_word == True :
-        result = result + YELLOW_BOX
-
 if in_word == False:
         result = result + WHITE_BOX
         
 
-print(result)
+print(result)[0, 1, 2, 3, 4, 5]
 
 
 
