@@ -15,7 +15,6 @@ YELLOW_BOX: str = "\U0001F7E8"
 
 result: str = ""
 
-
 i = 0       
 while i < len(SECRET):
         in_word: bool = False
@@ -28,9 +27,10 @@ while i < len(SECRET):
                         result = result + YELLOW_BOX 
                 j = j + 1
         i = i + 1
+else:
+        result = result + WHITE_BOX
         
 print(result)
-
 
 if guess == SECRET:
         print("Woo! You got it! ")
