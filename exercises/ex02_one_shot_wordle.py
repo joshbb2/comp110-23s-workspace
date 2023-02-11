@@ -28,8 +28,8 @@ while i < len(SECRET):
                 j = j + 1
         i = i + 1
 else:
-        result = result + WHITE_BOX
-        
+        result = result + WHITE_BOX       
+
 print(result)
 
 if guess == SECRET:
