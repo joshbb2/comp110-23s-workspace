@@ -12,23 +12,25 @@ while len(guess) != len(SECRET):
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
-
+word_idx: int = 0
 result: str = ""
-
-i = 0       
-while i < len(SECRET):
-        in_word: bool = False
-        j = 0
-        while (in_word == False) and (j < len(SECRET)):
-                if guess[i] == SECRET[j] and (i == j):
-                        result = result + GREEN_BOX
-                elif guess[i] == SECRET[j] and (i != j):
-                        in_word = True
-                        result = result + YELLOW_BOX 
-                j = j + 1
-        i = i + 1
-else:
-        result = result + WHITE_BOX       
+      
+while word_idx < len(SECRET):
+        if guess[word_idx] == SECRET[word_idx]:
+                result = result + GREEN_BOX
+        else:
+                in_word: bool = False
+                secret_idx: int = 0
+                while not in_word and secret_idx < len(SECRET):
+                        if guess[word_idx] == SECRET[secret_idx]:
+                                in_word = True
+                        else:
+                                secret_idx = secret_idx + 1
+                if in_word:
+                        result = result + YELLOW_BOX
+                else:
+                        result = result + WHITE_BOX
+        word_idx = word_idx + 1
 
 print(result)
 
