@@ -30,19 +30,20 @@ def emojified(guess: str, secret: str) -> str:
     "Determines if any index of guess is equal to any index of secret."
     assert len(guess) == len(secret)
     j = 0
-    c = 0
     while j < len(secret):
-        if contains_char == True:
-            return result + GREEN_BOX
-        else:
-            contains_char == False
-        while contains_char == False and c < len(secret):
-            if guess[j] == secret[c] and (j != c):
-                return result + YELLOW_BOX
-            else:
-                c = c + 1
-        else:
+        if contains_char(guess, secret[i]) == False:
             return result + WHITE_BOX
-    j = j + 1
+        else:
+            in_word: bool = False
+            j = 0
+            while contains_char(guess, secret[j]) == True:
+                if (i == j):
+                    in_word = True
+                    return result + GREEN_BOX
+                else:
+                    j = j + 1
+            if in_word:
+                return result + YELLOW_BOX     
+        i = i + 1
     
 
