@@ -2,14 +2,17 @@
 
 __author__ = "730406136"
 
-SECRET: str = "codes"
+secret: str = "codes"
 
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
-emojified: str = ""
+
+result: str = ""
 
 i = 0
+j = 0
+c = 0
 
 def contains_char(word: str, char: str) -> bool:
     "Determines if char is found at any index of word."
@@ -18,8 +21,30 @@ def contains_char(word: str, char: str) -> bool:
     while i < len(word):
         if word[i] == char:
             return True
-        else: 
+        else:
             i = i + 1
     else:
         return False
+
+def emojified(guess: str, secret: str) -> str:
+    "Determines if any index of guess is equal to any index of secret."
+    assert len(guess) == len(secret)
+    j = 0
+    c = 0
+    while j < len(secret):
+        if guess[j] == secret[c]:
+            return result + GREEN_BOX
+        else:
+            secret_idx: int = 0
+        while contains_char == False and secret_idx < len(secret):
+            if guess[j] == secret[secret_idx] and (j != secret_idx):
+                return result + YELLOW_BOX
+            else:
+                secret_idx = secret_idx + 1
+        # if contains_char:
+        #     return result + YELLOW_BOX
+        else:
+            return result + WHITE_BOX
+    j = j + 1
+    
 
