@@ -43,14 +43,21 @@ def input_guess(expected_length: int) -> str:
 def main() -> None:
     """The entrypoint of the program and main game loop."""
     k: int = 1
-    while k <= len(secret):
-        print(f"=== Turn {k}/{len(secret)} ===")
-        print(emojified(input_guess(len(secret)), secret))
-    if input_guess(len(secret)) == secret:
-        print(f"You won in {k}/{len(secret)} turns!")
+    win: bool = False
+    while k <= 6 and not win:
+        print(f"=== Turn {k}/6 ===")
+        user_guess: str = input_guess(len(secret))
+        print(emojified(user_guess, secret))
+        if user_guess == secret:
+            win = True
+        else:
+            k += 1
+    if win:
+        print(f"You won in {k}/6 turns!")
     else:
-        k += 1
-    print(f"X/{len(secret)} - Sorry, try again tomorrow!")
-        
+        print("X/6 - Sorry, try again tomorrow!")
+
+if __name__ == "__main__":
+    main()
 
 
