@@ -8,14 +8,10 @@ WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
 
-i: int = 0
-c: int = 0
-
 def contains_char(word: str, char: str) -> bool:
     "Determines if char is found at any index of word."
     assert len(char) == 1
-    i = 0
-    in_word: bool = False
+    i: int = 0
     while i < len(word):
         if word[i] == char:
             return True
@@ -26,15 +22,23 @@ def contains_char(word: str, char: str) -> bool:
 def emojified(guess: str, secret: str) -> str:
     "Determines if any index of guess is equal to any index of secret."
     assert len(guess) == len(secret)
-    c = 0
+    j: int = 0
     result: str = ""
-    while c < len(secret):
-        if guess[c] == secret[c]:
+    while j < len(secret):
+        if guess[j] == secret[j]:
             result += GREEN_BOX
-        elif contains_char(secret, guess[c]) == True:
+        elif contains_char(secret, guess[j]) == True:
             result += YELLOW_BOX
         else:
             result += WHITE_BOX
-        c += 1
+        j += 1
     return (result)
 
+def input_guess(expected_length: int) -> str:
+    user: str = input(f"Enter a {expected_length} character word: ")
+    while expected_length != len(user):
+        user = input(f"That wasn't {expected_length} chars! Try again: ")
+    return user
+
+def main() -> None:
+    """The entrypoint of the program and main game loop."""
