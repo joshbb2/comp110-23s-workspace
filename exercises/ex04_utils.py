@@ -2,9 +2,8 @@
 
 __author__ = "730406136"
 
-list_all: list[int] = list()
 
-def all(list_all, integer: int) -> bool:
+def all(list_all: list[int], integer: int) -> bool:
     i = 0
     if len(list_all) == 0:
             return False
@@ -15,5 +14,17 @@ def all(list_all, integer: int) -> bool:
             return False
     return True
 
-
+def max(input: list[int]) -> int:
+    if len(input) == 0:
+        raise ValueError("max() arg is an empty List")
+    j = 1
+    max: int = input[0]
+    while j < len(input) - 1:
+        if max < input[j]:
+            max = input[j]
+        else:
+            max: int = input[0]
+        j += 1
+    return max
+        
     
