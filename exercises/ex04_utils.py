@@ -4,6 +4,7 @@ __author__ = "730406136"
 
 
 def all(list_all: list[int], integer: int) -> bool:
+    #Determines if all ints in a list are equal to a given int.
     i = 0
     if len(list_all) == 0:
             return False
@@ -15,6 +16,7 @@ def all(list_all: list[int], integer: int) -> bool:
     return True
 
 def max(input: list[int]) -> int:
+    #Given a list of ints, returns the largest int.
     if len(input) == 0:
         raise ValueError("max() arg is an empty List")
     j = 1
@@ -28,6 +30,7 @@ def max(input: list[int]) -> int:
     return max
 
 def is_equal(list1: list[int], list2: list[int]) -> bool:
+    #Given two lists of ints, returns True if every element at every index is equal in both lists.
     k = 0
     while k < len(list1) - 1:
         if list1[k] == list2[k]:
