@@ -1,4 +1,4 @@
-"""Utility Functions."""
+"""EX04 - Utility Functions."""
 
 __author__ = "730406136"
 
@@ -26,5 +26,15 @@ def max(input: list[int]) -> int:
             max: int = input[0]
         j += 1
     return max
+
+def is_equal(list1: list[int], list2: list[int]) -> bool:
+    k = 0
+    while k < len(list1) - 1:
+        if list1[k] == list2[k]:
+            k += 1
+        else:
+            return False
+    return True
+
         
     
