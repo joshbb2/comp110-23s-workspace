@@ -7,7 +7,7 @@ def all(list_all: list[int], integer: int) -> bool:
     #Determines if all ints in a list are equal to a given int.
     i = 0
     if len(list_all) == 0:
-            return False
+        return False
     while i < len(list_all) - 1:
         if list_all[i] == integer:
             i += 1
@@ -20,8 +20,8 @@ def max(input: list[int]) -> int:
     if len(input) == 0:
         raise ValueError("max() arg is an empty List")
     j = 1
-    max: int = input[0]
     while j < len(input):
+        max: int = input[0]
         if max < input[j]:
             max = input[j]
         else:
