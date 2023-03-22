@@ -2,7 +2,8 @@
 
 __author__ = "730406136"
 
-from exercises.cyoa import random_num
+from exercises.cyoa import generate_int
+from random import randint
 
-def test_value() -> None:
-    assert random_num()
+def test_generate_int() -> None:
+    assert generate_int() in range(1,10)
