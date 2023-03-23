@@ -69,7 +69,6 @@ def main() -> None:
     if menu == "A":
         points += 1
         winner = random_num()
-        print(winner)
         if winner:
             print(f"{GREEN_BOX} Great job! You won in {turn} turns! {GREEN_BOX}")
         else:
@@ -83,12 +82,16 @@ def main() -> None:
         points += 1
         points = point_count(points)
         view_score: str = input("Type 'Score' to view your score: ")
-        if view_score == "Score":
+        typed_score: bool = False
+        if view_score == 'Score':
             points += 1
             print(f"You have {points} points!")
         else:
             while view_score != "Score":
                 view_score = input("Type 'Score' to view your score: ")
+                if view_score == 'Score':
+                    points += 1
+                    print(f"You have {points} points!")
         resume: str = input("Type 'Resume' to unpause your adventure. \nType 'Exit' to exit game. \nSelection: ")
         if resume == "Resume":
             points += 1
@@ -98,6 +101,12 @@ def main() -> None:
             exit()
         while resume != "Resume" or "Exit":
             resume = input("Invalid input. \nType 'Resume' to unpause your adventure. \nType 'Exit' to exit game. \nSelection: ")
+            if resume == "Resume":
+                points += 1
+                main()
+            if resume == "Exit":
+                points += 1
+                exit()
     else:
         while menu != "A" or "B" or "C":
             menu = input("Invalid input. \nEnter 'A' for the number guessing game. \nEnter 'B' to exit your adventure. \nEnter 'C' to pause your adventure. \nSelection: ")
