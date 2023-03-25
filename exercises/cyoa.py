@@ -8,7 +8,8 @@ turn: int = 1
 
 def greet() -> None:
     global player
-    player = input("Welcome to your adventure! What is your name? ")
+    print("Welcome to your adventure!")
+    player = input("What is your name? ")
 
 def input_guess() -> int:
     user_guess: int in range(1,11) = int(input("Guess a number between 1 and 10: "))
@@ -32,7 +33,7 @@ def random_num() -> bool:
     return correct
     
 def exit_game() -> None:
-    print(f"Goodbye, thanks for playing! Your score is {points} points!")
+    print(f"Goodbye, thanks for playing! You earned {points} adventure points!")
     print("Type 'Yes' to play again. \nType 'No' to exit.")
     again: str = input("Selection: ")
     cont: bool = False
