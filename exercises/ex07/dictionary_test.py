@@ -13,7 +13,10 @@ def test_invert_use_2() -> None:
     assert invert({'a': 'b', 'c': 'd', 'e': 'f', 'g': 'h'}) == {'b': 'a', 'd': 'c', 'f': 'e', 'h':'g'}
 
 def test_invert_edge() -> None:
-    assert invert({'monday': 'tuesday', 'wednesday': 'thursday', 'monday': 'friday'}) == KeyError
+    import pytest
+    with pytest.raises(KeyError):
+        my_dictionary = {'monday': 'tuesday', 'wednesday': 'thursday', 'friday': 'tuesday'}
+        invert(my_dictionary)
 
 def test_favorite_color_use_1() -> None:
     assert favorite_color({'josh': 'blue', 'gabriel': 'red', 'betty': 'blue', 'sam': 'green'}) == 'blue'

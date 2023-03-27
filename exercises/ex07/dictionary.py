@@ -6,8 +6,8 @@ def invert(dict_1: dict[str,str]) -> dict[str,str]:
     """Inverts the keys and values of given dictionary."""
     result: dict[str,str] = {}
     for key in dict_1:
-        if key in result:
-            raise KeyError
+        if dict_1[key] in result:
+            raise KeyError("Value is already in the resulting dictionary.")
         else:
             result[dict_1[key]] = key
     return result
@@ -23,14 +23,11 @@ def favorite_color(dict_1: dict[str,str]) -> str:
 
 def count(list_1: list[str]) -> dict[str,int]:
     result: dict[str,int] = {}
-    counter: int = 0
     for item in list_1:
         if item in result:
-            counter += 1
-            result[item] = counter
+            result[item] += 1
         else:
-            counter = 1
-            result[item] = counter
+            result[item] = 1
     return result
     
         
