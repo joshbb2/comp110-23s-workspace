@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "comp110-23s-workspace-2",
+			"path": "../comp110-23s-workspace-2"
+		}
+	],
+	"settings": {
+		"githubPullRequests.remotes": [
+			"origin",
+			"upstream",
+			"https://github.com/comp110-2023s/comp110-workspace-joshbb2.git"
+		]
+	}
+}
