@@ -37,13 +37,13 @@ def head(original_dict: dict[str, list[str]], rows: int) -> dict[str, list[str]]
     """Produces a new column-based table with only the first N rows of data for each column."""
     smaller_data_set: dict[str, list[str]] = {}
     for key in original_dict:
-        sub_list: list[str] = []
-        data_to_get: list[str] = original_dict[key]
-        j: int = 0
-        while j < 5:
-            sub_list.append(data_to_get[j])
-            j += 1
-        smaller_data_set[key] = sub_list
+            sub_list: list[str] = []
+            data_to_get: list[str] = original_dict[key]
+            j: int = 0
+            while j < rows:
+                sub_list.append(data_to_get[j])
+                j += 1
+            smaller_data_set[key] = sub_list
     return smaller_data_set
 
 
@@ -52,24 +52,19 @@ def select(subset_columns: dict[str, list[str]], column_names: list[str]) -> dic
     smaller_data_set_2: dict[str, list[str]] = {}
     # while len(smaller_data_set_2) < 10:
     for column in column_names:
-        sub_list_2: list[str] = []
-        data_to_get_2: list[str] = subset_columns[column]
-        i: int = 0
-        while i < 10:
-            sub_list_2.append(data_to_get_2[i])
-            i += 1
-        smaller_data_set_2[column] = sub_list_2
+        smaller_data_set_2[column] = subset_columns[column]
     return smaller_data_set_2
 
 
 def concat(dict_1: dict[str, list[str]], dict_2: dict[str, list[str]]) -> dict[str, list[str]]:
     result: dict[str, list[str]] = {}
-    while len(result) < 10:
+    list_1: list[str] = []
+    while len(list_1) < 10:
         for key in dict_1:
-            result[key] = dict_1[key]
+            list_1.append(dict_1[key])
         for key in dict_2:
             if key in result:
-                result[key] += dict_2[key]
+                list_1.append(dict_2[key])
             else:
                 result[key] = dict_2[key]
     return result
