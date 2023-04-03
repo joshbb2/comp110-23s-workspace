@@ -1,4 +1,9 @@
+"""EX08 - Data Wrangling (Functions)"""
+
 from csv import DictReader
+
+__author__ = "730406136"
+
 
 def read_csv_rows(filename: str) -> list[dict[str,str]]:
     """Read csv file and return as a list of dicts with header keys"""
@@ -8,7 +13,6 @@ def read_csv_rows(filename: str) -> list[dict[str,str]]:
     for row in csv_reader:
         result.append(row)
     file_handle.close()
-    print(filename)
     return result
 
 
@@ -57,15 +61,24 @@ def select(subset_columns: dict[str, list[str]], column_names: list[str]) -> dic
 
 
 def concat(dict_1: dict[str, list[str]], dict_2: dict[str, list[str]]) -> dict[str, list[str]]:
+    """Produces a new column-based table with two column-based tables combined."""
     result: dict[str, list[str]] = {}
-    list_1: list[str] = []
-    while len(list_1) < 10:
-        for key in dict_1:
-            list_1.append(dict_1[key])
-        for key in dict_2:
-            if key in result:
-                list_1.append(dict_2[key])
-            else:
-                result[key] = dict_2[key]
+    for key in dict_1:
+        result[key] = dict_1[key]
+    for column in dict_2:
+        if column in result:
+            result[column] += dict_2[column]
+        else:
+            result[column] = dict_2[column]
+    return result
+
+
+def count(list_1: list[str]) -> dict[str, int]:
+    result: dict[str, int] = {}
+    for item in list_1:
+        if item in result:
+            result[item] += 1
+        else:
+            result[item] = 1
     return result
         
