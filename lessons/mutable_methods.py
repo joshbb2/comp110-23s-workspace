@@ -20,12 +20,26 @@ class Point:
         return scaled
     
     def __str__(self):
-        """Print prettier version of our point"""
+        """Print prettier version of our point""" #overrides built-in str method
         return f"({self.x},{self.y})"
-    
-a: Point = Point(1.0, 2.0)
-b: Point = a.scale(3.0)
 
-# print(str(a))
-# print(b)
-print(f"My point is: {b}")
+    def __mul__(self, factor: float) -> Point:
+        """Overrides multiplication error when multiplying a float and a Point"""
+        scaled: Point = Point(self.x * factor, self.y * factor)
+        return scaled
+
+    def __getitem__(self, index: int) -> float:
+        """Overloading subscription notation"""
+        if index == 0:
+            return self.x
+        elif index == 1:
+            return self.y
+        else:
+            raise IndexError
+
+
+a: Point = Point(1.0, 2.0)
+# b: Point = a.scale(3.0)
+b: Point = a * 3.0  #a is self and 3.0 is factor parameter of __mul__
+print(b[1]) #b is self and 1 is index parameter of __getitem__
+"""Line above prints y-coordinate"""
