@@ -8,8 +8,8 @@ class Point:
 
     def __init__(self, x: float, y: float):
         """Initialize a point with its x,y components"""
-        self.x *= x
-        self.y *= y
+        self.x = x
+        self.y = y
 
     def scale_by(self, factor: float):
         self.x *= factor
@@ -19,5 +19,13 @@ class Point:
         scaled: Point = Point(self.x * factor, self.y * factor)
         return scaled
     
+    def __str__(self):
+        """Print prettier version of our point"""
+        return f"({self.x},{self.y})"
+    
 a: Point = Point(1.0, 2.0)
 b: Point = a.scale(3.0)
+
+# print(str(a))
+# print(b)
+print(f"My point is: {b}")
