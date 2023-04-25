@@ -61,6 +61,29 @@ class Simpy:
         else:
             return new_object_float
         
+    def __pow__(self, rhs: Union[float, Simpy]) -> Simpy:
+        is_float: bool = False
+        if type(rhs) == Simpy:
+            assert len(self.values) == len(rhs.values)
+            power_vals: list[float] = []
+            i: int = 0
+            for item in rhs.values:
+                pow_items: float = self.values[i] ** item
+                power_vals.append(pow_items)
+                i += 1
+            new_object_simpy: Simpy = Simpy(power_vals)
+        if type(rhs) == float:
+            is_float = True
+            exp_vals: list[float] = []
+            for value in self.values:
+                exp_items: float = value ** rhs
+                exp_vals.append(exp_items)
+            new_object_float: Simpy = Simpy(exp_vals)
+        if not is_float:
+            return new_object_simpy
+        else:
+            return new_object_float
+        
 
 
 
