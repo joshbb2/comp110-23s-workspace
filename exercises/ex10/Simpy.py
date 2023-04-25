@@ -84,6 +84,35 @@ class Simpy:
         else:
             return new_object_float
         
+    def __eq__(self, rhs: Union[float, Simpy]) -> list[bool]:
+        is_float: bool = False
+        if type(rhs) == Simpy:
+            assert len(self.values) == len(rhs.values)
+            bool_list_simpy: list[bool] = []
+            i: int = 0
+            while i < len(self.values):
+                if rhs.values[i] == self.values[i]:
+                    bool_list_simpy.append(True)
+                else:
+                    bool_list_simpy.append(False)
+                i += 1
+        if type(rhs) == float:
+            is_float = True
+            bool_list_float: list[bool] = []
+            i: int = 0
+            while i < len(self.values):
+                if rhs == self.values[i]:
+                    bool_list_float.append(True)
+                else:
+                    bool_list_float.append(False)
+                i += 1
+        if not is_float:
+            return bool_list_simpy
+        else:
+            return bool_list_float
+
+
+        
 
 
 
