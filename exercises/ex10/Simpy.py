@@ -4,28 +4,29 @@ from __future__ import annotations
 
 from typing import Union
 
-__author__ = "YOUR PID HERE"
+__author__ = "730406136"
 
 
 class Simpy:
+    """Initialize Simpy class with one attribute of values."""
+    
     values: list[float]
 
     def __init__(self, list1: list[float]):
-        """Initializes value attribute of newly constructed Simpy object to list1."""
+        """Initialize value attribute of newly constructed Simpy object to list1."""
         self.values = list1
     
     def __str__(self) -> str:
-        """Represents Simpy object as a string."""
+        """Represent Simpy object as a string."""
         return f"Simpy({self.values})"
     
-    def fill(self, float_val: float, num_vals: int):
-        """Fills a Simpy's values with a specific number of repeating float values."""
-        while len(self.values) < num_vals:
-            self.values.append(float_val)
+    def fill(self, float_val: float, num_vals: int) -> None:
+        """Fill a Simpy's values with a specific number of repeating float values."""
+        self.values = [float_val] * num_vals
         return None
     
-    def arange(self, start: float, stop: float, step: float = 1.0):
-        """Fills in the values attribute with range of float values."""
+    def arange(self, start: float, stop: float, step: float = 1.0) -> None:
+        """Fill in the values attribute with range of float values."""
         assert step != 0.0
         x: float = start
         while x != stop:
@@ -34,11 +35,12 @@ class Simpy:
         return None
     
     def sum(self) -> float:
-        """Computes and returns the sum of all items in the values attribute."""
+        """Compute and return the sum of all items in the values attribute."""
         sum_total: float = sum(self.values)
         return sum_total
     
     def __add__(self, rhs: Union[float, Simpy]) -> Simpy:
+        """Allow use of the addition operator between floats and Simpy objects."""
         is_float: bool = False
         if type(rhs) == Simpy:
             assert len(self.values) == len(rhs.values)
@@ -62,6 +64,7 @@ class Simpy:
             return new_object_float
         
     def __pow__(self, rhs: Union[float, Simpy]) -> Simpy:
+        """Allow use of the power operator ** between floats and Simpy objects."""
         is_float: bool = False
         if type(rhs) == Simpy:
             assert len(self.values) == len(rhs.values)
@@ -85,6 +88,7 @@ class Simpy:
             return new_object_float
         
     def __eq__(self, rhs: Union[float, Simpy]) -> list[bool]:
+        """Allow use of equality operator == between items in values attribute and another Simpy object or float."""
         is_float: bool = False
         if type(rhs) == Simpy:
             assert len(self.values) == len(rhs.values)
@@ -112,6 +116,7 @@ class Simpy:
             return bool_list_float
         
     def __gt__(self, rhs: Union[float, Simpy]) -> list[bool]:
+        """Operator overload for >."""
         is_float: bool = False
         if type(rhs) == Simpy:
             assert len(self.values) == len(rhs.values)
@@ -136,15 +141,23 @@ class Simpy:
         if not is_float:
             return bool_list_simpy
         else:
-            return bool_list_float   
+            return bool_list_float
 
-
-        
-
-
-
-
-
-
-
-    # TODO: Your constructor and methods will go here.
+    def __getitem__(self, rhs: Union[int, list[bool]]) -> Union[float, Simpy]:
+        """Add the ability to use the subscription operator with Simpy objects."""
+        if type(rhs) == int:
+            assert rhs < len(self.values)
+            j: int = 0
+            while j < len(self.values):
+                if rhs == j:
+                    return self.values[j]
+                j += 1
+        if type(rhs) == list:
+            values_to_include: list[float] = []
+            j: int = 0
+            while j < len(rhs):
+                if rhs[j]:
+                    values_to_include.append(self.values[j])
+                j += 1
+            result: Simpy = Simpy(values_to_include)
+            return result 
