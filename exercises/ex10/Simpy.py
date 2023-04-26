@@ -110,6 +110,33 @@ class Simpy:
             return bool_list_simpy
         else:
             return bool_list_float
+        
+    def __gt__(self, rhs: Union[float, Simpy]) -> list[bool]:
+        is_float: bool = False
+        if type(rhs) == Simpy:
+            assert len(self.values) == len(rhs.values)
+            bool_list_simpy: list[bool] = []
+            j: int = 0
+            while j < len(self.values):
+                if rhs.values[j] < self.values[j]:
+                    bool_list_simpy.append(True)
+                else:
+                    bool_list_simpy.append(False)
+                j += 1
+        if type(rhs) == float:
+            is_float = True
+            bool_list_float: list[bool] = []
+            k: int = 0
+            while k < len(self.values):
+                if rhs < self.values[k]:
+                    bool_list_float.append(True)
+                else:
+                    bool_list_float.append(False) 
+                k += 1
+        if not is_float:
+            return bool_list_simpy
+        else:
+            return bool_list_float   
 
 
         
